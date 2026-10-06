@@ -113,6 +113,41 @@ h1 span {
   margin-bottom: 20px; }
 
 /* Tarjetas */
+
+.imagenestudiantes {
+    float: right;
+    width: 50%;
+}
+
+.imagenestudiantes img {
+    width: 100%;
+}
+
+.tarjetas {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 40px 6%;
+    box-sizing: border-box;
+    gap: 30px;
+}
+
+.texto {
+    flex: 1;
+}
+
+.imagenestudiantes {
+    flex: 1;
+}
+
+.imagenestudiantes img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
 .tarjetas {
   gap: 30px;
   padding: 0 5%;
@@ -189,6 +224,11 @@ footer {
   letter-spacing: 3px;
   justify-content: space-between;
 }
+
+.campus {
+  float: right;
+}
+
 
 
 
