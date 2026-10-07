@@ -69,11 +69,3 @@ function cambiarProducto(clave) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// Botón que rota entre los 5 productos
-const orden = ["zeus", "juggernaut", "wraith", "legion", "terrorblade"];
-let indiceActual = 0;
-
-function alternar() {
-  indiceActual = (indiceActual + 1) % orden.length;
-  cambiarProducto(orden[indiceActual]);
-}
