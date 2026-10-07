@@ -1,68 +1,287 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>TecNova | Instituto Tecnológico</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TecNova: instituto tecnologico con formacion tecnica practica, moderna y de calidad.">
+  <title>TecNova | Instituto Tecnologico</title>
+
+  <!-- Bootstrap 5 (framework CSS) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS EXTERNO: estilos generales y reutilizables del sitio -->
   <link rel="stylesheet" href="css/stylesTN.css">
+
+  <!-- CSS INTERNO: ajustes propios de esta pagina (solo aplican a index.html) -->
+  <style>
+    #registro { scroll-margin-top: 90px; }
+    .aviso-interno {
+      background: #FFF4DB;
+      border-left: 5px solid #FFB020;
+      padding: .75rem 1rem;
+      border-radius: .5rem;
+      font-size: .95rem;
+    }
+  </style>
 </head>
 <body>
 
-  <header>
-    <img src="imagenes/logo.png" alt="logo" width=330px>
-      <a href="tecnova.html"></a>    
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="nosotros.html">Carreras</a>
-      <a href="nosotros.html">Nosotros</a>
-      <a href="nosotros.html">Admisión</a>
-      <a href="nosotros.html">Noticias</a>
-      <a href="nosotros.html">Contacto</a>
+  <a class="visually-hidden-focusable" href="#contenido">Saltar al contenido</a>
+
+  <header class="sticky-top">
+    
+    <nav class="navbar navbar-expand-lg barra-oscura" data-bs-theme="dark" aria-label="Navegacion principal">
+      <div class="container">
+        <img src="imagenes/logo.png" width="300px" height=" 100px"> 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#carreras">Carreras</a></li>
+            <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="#beneficios">Beneficios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#registro">Admision</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          </ul>
+          <a href="#registro" class="btn-pildora">Inscripciones</a>
+        </div>
+      </div>
     </nav>
-    <a href="nosotros.html" class="boton">INSCRIPCIONES</a>
   </header>
 
-  <main>
-    <section class="floro">
-      
-      <div class="floro-texto">
-        <p class="pequeño">TU FUTURO COMIENZA AQUÍ</p>
-        <h1>Formacion tecnica <span>para un mejor mañana</span></h1>
-        <p>En TecNova te brindamos una educación práctica, moderna y de calidad, para que desarrolles todo tu potencial profesional.</p>
-        <a href="nosotros.html" class="boton">Conoce nuestras carreras</a>
+  <main id="contenido">
+
+    <!-- HERO (Flexbox) -->
+    <section id="inicio" class="hero">
+        <figure class="hero-imagen">
+          <img src="imagenes/campus.jpg" width="1024" height="572"
+               alt="Estudiantes caminando hacia la entrada del campus de TecNova" class="img-fluid" fetchpriority="high">
+        </figure>
+      <div class="container hero-flex">
+        <div class="hero-texto">
+          <p class="hero-pequeno">Tu futuro comienza aqui</p>
+          <h1>Formacion tecnica <span>para un mejor mañana</span></h1>
+          <p class="hero-parrafo">En TecNova te brindamos una educacion practica, moderna y de calidad para que desarrolles todo tu potencial profesional.</p>
+          <a href="#carreras" class="btn-pildora">Conoce nuestras carreras</a>
+        </div>
       </div>
-      <article class="campus"><img src="imagenes/campus.png" alt="imagen campus"></article>
     </section>
-       
-    <section class="tarjetas">
-      <article class="tarjeta">
-        <h3>MISION</h3>
-        <p>Misión 
-          Ofrecer servicios académicos de calidad mediante una gestión institucional moderna, eficiente y accesible, facilitando la comunicación directa con          nuestros interesados y optimizando los procesos de registro para asegurar una experiencia ágil y sin pérdidas de información desde el primer contacto.</p>
-      </article>
-      <article class="tarjeta">
-        <h3> VISION</h3>
-        <p>Visión
-        Ser una institución educativa líder en innovación y presencia digital, reconocida por proyectar una imagen profesional y moderna a través de plataformas         tecnológicas de vanguardia que garanticen una experiencia de usuario óptima en cualquier dispositivo.
-        </p>
-      </article>
-      <article class="tarjeta">
-        <h3> VALORES</h3>
-        <p>Valores
-        Innovación: Buscamos la mejora continua mediante el uso de herramientas tecnológicas modernas para adaptarnos a las necesidades del entorno digital.        Eficiencia: Optimizamos nuestros procesos para reducir demoras, estructurar la información y garantizar la seguridad de los datos.
-        </p>
-      </article>
+
+    <!-- CARRERAS (CSS Grid + tarjetas Bootstrap) -->
+    <section id="carreras" class="seccion">
+      <div class="container">
+        <h2>Nuestras carreras</h2>
+        
+        <div class="grid-carreras">
+          <article class="card h-100">
+            <img src="imagenes/carrera-software.jpg" width="800" height="500"
+                 alt="Dos estudiantes revisando codigo en una laptop dentro del laboratorio de TecNova"
+                 class="card-img-top img-software" loading="lazy">
+            <div class="card-body">
+              <h3 class="card-title h5">Desarrollo de Software</h3>
+              <p class="card-text">Aprende a programar aplicaciones web y moviles con metodologias agiles.</p>
+              <span class="badge badge-amarillo">Presencial / Virtual</span>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <a href="#registro" class="btn btn-outline-warning btn-sm" data-carrera="Desarrollo de Software">Pedir informacion</a>
+            </div>
+          </article>
+          <article class="card h-100">
+            <img src="imagenes/carrera-redes.jpg" width="800" height="498"
+                 alt="Tecnico con casco amarillo revisando el cableado de un rack de servidores con una tablet"
+                 class="card-img-top img-redes" loading="lazy">
+            <div class="card-body">
+              <h3 class="card-title h5">Redes y Comunicaciones</h3>
+              <p class="card-text">Diseña, instala y protege redes de datos para empresas e instituciones.</p>
+              <span class="badge badge-amarillo">Presencial</span>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <a href="#registro" class="btn btn-outline-warning btn-sm" data-carrera="Redes y Comunicaciones">Pedir informacion</a>
+            </div>
+          </article>
+          <article class="card h-100">
+            <img src="imagenes/carrera-diseno.jpg" width="800" height="460"
+                 alt="Dos estudiantes de diseño trabajando con una tableta grafica y una paleta de colores frente a un monitor"
+                 class="card-img-top img-diseno" loading="lazy">
+            <div class="card-body">
+              <h3 class="card-title h5">Diseño Grafico Digital</h3>
+              <p class="card-text">Crea identidades visuales, interfaces y contenido para medios digitales.</p>
+              <span class="badge badge-amarillo">Presencial / Virtual</span>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <a href="#registro" class="btn btn-outline-warning btn-sm" data-carrera="Diseño Grafico Digital">Pedir informacion</a>
+            </div>
+          </article>
+          <article class="card h-100">
+            <img src="imagenes/carrera-administracion.jpg" width="800" height="498"
+                 alt="Tres estudiantes colaborando en una mesa con laptops y una pizarra de diagramas"
+                 class="card-img-top img-admin" loading="lazy">
+            <div class="card-body">
+              <h3 class="card-title h5">Administracion de Empresas</h3>
+              <p class="card-text">Gestiona equipos, finanzas y proyectos con herramientas tecnologicas.</p>
+              <span class="badge badge-amarillo">Virtual</span>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <a href="#registro" class="btn btn-outline-warning btn-sm" data-carrera="Administracion de Empresas">Pedir informacion</a>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
     
+
+    <!-- BENEFICIOS (Flexbox) -->
+    <section id="beneficios" class="seccion">
+      <div class="container">
+        <h2>¿Por que estudiar en TecNova?</h2>
+        <ul class="beneficios-flex">
+          <li><strong>Practica desde el primer ciclo</strong><span>Laboratorios equipados y proyectos reales.</span></li>
+          <li><strong>Horarios flexibles</strong><span>Turnos mañana, tarde y noche, o modalidad virtual.</span></li>
+          <li><strong>Bolsa de trabajo</strong><span>Convenios con empresas para tus practicas.</span></li>
+          <li><strong>Campus sostenible</strong><span>Reciclaje, ahorro de energia y cero papel.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FORMULARIO DE REGISTRO -->
+    <section id="registro" class="seccion seccion-gris">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <h2>Registrate y recibe informacion</h2>
+            
+
+            
+            <form id="formRegistro" action="resultado.html" method="get" novalidate class="card card-body shadow-sm">
+              <div class="row g-3">
+
+                <div class="col-12 col-md-6">
+                  <label for="nombre" class="form-label">Nombre completo *</label>
+                  <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ej. Maria Perez" autocomplete="name">
+                  <div class="invalid-feedback" id="error-nombre"></div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="correo" class="form-label">Correo electronico *</label>
+                  <input type="email" class="form-control" id="correo" name="correo" placeholder="nombre@correo.com" autocomplete="email">
+                  <div class="invalid-feedback" id="error-correo"></div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <label for="edad" class="form-label">Edad *</label>
+                  <input type="number" class="form-control" id="edad" name="edad" min="16" max="99">
+                  <div class="invalid-feedback" id="error-edad"></div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <label for="telefono" class="form-label">Telefono *</label>
+                  <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="9 digitos" inputmode="numeric" maxlength="9">
+                  <div class="invalid-feedback" id="error-telefono"></div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <label for="ciudad" class="form-label">Ciudad</label>
+                  <input type="text" class="form-control" id="ciudad" name="ciudad" list="listaCiudades" placeholder="Escribe o elige">
+                  <datalist id="listaCiudades">
+                    <option value="Puno"></option>
+                    <option value="Juliaca"></option>
+                    <option value="Arequipa"></option>
+                    <option value="Cusco"></option>
+                    <option value="Lima"></option>
+                  </datalist>
+                </div>
+
+                <div class="col-12">
+                  <label for="carrera" class="form-label">Carrera de interes *</label>
+                  <select class="form-select" id="carrera" name="carrera">
+                    <option value="">-- Selecciona una carrera --</option>
+                    <option>Desarrollo de Software</option>
+                    <option>Redes y Comunicaciones</option>
+                    <option>Diseño Grafico Digital</option>
+                    <option>Administracion de Empresas</option>
+                  </select>
+                  <div class="invalid-feedback" id="error-carrera"></div>
+                </div>
+
+                <fieldset class="col-12 col-md-6">
+                  <legend class="form-label fs-6">Modalidad *</legend>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="modalidad" id="modPresencial" value="Presencial">
+                    <label class="form-check-label" for="modPresencial">Presencial</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="modalidad" id="modVirtual" value="Virtual">
+                    <label class="form-check-label" for="modVirtual">Virtual</label>
+                  </div>
+                  <div class="text-danger small d-none" id="error-modalidad"></div>
+                </fieldset>
+
+                <fieldset class="col-12 col-md-6">
+                  <legend class="form-label fs-6">Turno preferido</legend>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="turno" id="turnoM" value="Mañana">
+                    <label class="form-check-label" for="turnoM">Mañana</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="turno" id="turnoT" value="Tarde">
+                    <label class="form-check-label" for="turnoT">Tarde</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="turno" id="turnoN" value="Noche">
+                    <label class="form-check-label" for="turnoN">Noche</label>
+                  </div>
+                </fieldset>
+
+                
+
+                
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="terminos" name="terminos">
+                    <label class="form-check-label" for="terminos">Acepto el tratamiento de mis datos personales *</label>
+                    <div class="invalid-feedback" id="error-terminos"></div>
+                  </div>
+                </div>
+
+                <div class="col-12 d-flex flex-wrap gap-2">
+                  <button type="submit" class="btn-pildora border-0">Enviar registro</button>
+                  <button type="reset" class="btn-pildora-borde" id="btnLimpiar">Limpiar</button>
+                </div>
+              </div>
+            </form>
+
+            <div id="resultado" class="mt-4" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <h3>Enlaces de Interes</h3>
+  <footer id="contacto">
+    <div class="container footer-flex">
+      <div>
+        <h3>Contacto</h3>
+        <p>Av. La Torre 123, Puno<br>Tel. 951 000 000<br>admision@tecnova.edu.pe</p>
+      </div>
+      <div>
+        <h3>Enlaces de interes</h3>
         <ul>
-            <li><a href="index.html" target="_blank">Pagina Principal</a></li>
-            <li><a href="https://github.com/carloschaguam-commits/CarlosChagua" target="_blank">Mi Repositorio</a></li>
-            <li><a href="https://arnoldbgq.github.io/cursofrontend/" target="_blank">Pagina del Instructor</a></li>
-            <li><a href="https://github.com/arnoldbgq/cursofrontend/tree/main" target="_blank">Repositorio del Instructor</a></li>
+          <li><a href="index.html">Pagina principal</a></li>
+          <li><a href="https://github.com/carloschaguam-commits/CarlosChagua" target="_blank" rel="noopener noreferrer">Mi repositorio</a></li>
+          <li><a href="https://arnoldbgq.github.io/cursofrontend/" target="_blank" rel="noopener noreferrer">Pagina del instructor</a></li>
+          <li><a href="https://github.com/arnoldbgq/cursofrontend/tree/main" target="_blank" rel="noopener noreferrer">Repositorio del instructor</a></li>
         </ul>
+      </div>
+    </div>
+    <p class="copy">&copy; 2026 TecNova Instituto Tecnologico. Proyecto academico.</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JavaScript externo -->
+  <script src="js/main.js"></script>
 </body>
 </html>
