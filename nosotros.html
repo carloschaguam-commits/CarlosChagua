@@ -17,12 +17,36 @@
     .nos-hero .lead-nos { max-width: 58ch; color: #d9d9d9; font-size: 1.15rem; margin: 1.25rem 0 0; }
 
     /* Mision y vision */
-    .mv-card { height: 100%; border-radius: 1.25rem; padding: 2.25rem 2rem; background: #fff6d6; color: #e8e8e8;  }
-    .mv-card h2 { font-size: 1.9rem; font-weight: 800; margin: 0 0 .75rem; color: #F5B400; }
-    .mv-card h2::after { display: none; }
-    .mv-frase { font-size: 1.2rem; font-weight: 600; line-height: 1.35; margin: 0 0 1rem; color: #111; }
-    .mv-card p.detalle { margin: 0; line-height: 1.65; color: #111; }
-#historia h2 { color: #F5B400; }
+    /* Titulos: mismo estilo en Mision, Vision e Historia */
+.mv-card h2,
+#historia h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #F5B400;
+  margin: 0 0 .75rem;
+  padding: 0;
+}
+
+/* Subtitulo de las tarjetas */
+.mv-frase {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 1.25rem;
+  color: #111;
+}
+
+/* Parrafos: mismo tamaño, interlineado y color */
+.mv-card p.detalle,
+.historia-intro {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #111;
+  margin: 0 0 1rem;
+}
+.mv-card p.detalle { margin-bottom: 0; }
+.historia-intro { max-width: 70ch; }
     /* Historia */
     .historia-intro { max-width: 70ch; }
     .negro {color: #F5B400;}
