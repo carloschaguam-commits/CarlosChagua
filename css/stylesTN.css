@@ -149,6 +149,8 @@ footer a { color: var(--ambar); }
 .grid-carreras .card { border-top-color: var(--ambar); }
 .copy { text-align: center; padding: 1rem; margin: 1.5rem 0 0; border-top: 1px solid #333; font-size: .9rem; }
 
+
+
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
   .hero { flex-direction: column-reverse; min-height: 0; }
