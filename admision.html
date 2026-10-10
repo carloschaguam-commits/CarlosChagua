@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Proceso de admision y formulario de registro de TecNova.">
+  <title>Admision | TecNova Instituto Tecnologico</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/stylesTN.css">
+</head>
+<body>
+
+  <a class="visually-hidden-focusable" href="#contenido">Saltar al contenido</a>
+
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg barra-oscura" data-bs-theme="dark" aria-label="Navegacion principal">
+      <div class="container">
+        <a class="navbar-brand" href="tecnova.html">
+          <img src="imagenes/logo.png" width="300" height="100" alt="TecNova, Instituto Tecnologico" class="logo-nav">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="tecnova.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="carreras.html">Carreras</a></li>
+            <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="beneficios.html">Beneficios</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="admision.html">Admision</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          </ul>
+          <a href="admision.html#registro" class="btn-pildora">Inscripciones</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="pagina-hero">
+      <div class="container">
+        <h1>Admision</h1>
+        <p class="lead-pagina">Inscribirte es simple: tres pasos y listo.</p>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="container">
+        <ol class="pasos">
+          <li><span>1</span><strong>Registrate</strong><p>Completa el formulario con tus datos.</p></li>
+          <li><span>2</span><strong>Recibe asesoria</strong><p>Un asesor te llamara para orientarte.</p></li>
+          <li><span>3</span><strong>Matriculate</strong><p>Presenta tus documentos y asegura tu vacante.</p></li>
+        </ol>
+        <div class="aviso-interno mt-4"><strong>Requisitos:</strong> copia de DNI y certificado de estudios secundarios.</div>
+      </div>
+    </section>
+
+    <section id="registro" class="seccion seccion-gris">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <h2>Registrate y recibe informacion</h2>
+            <p class="subtitulo">Todos los campos son obligatorios.</p>
+
+            <form id="formRegistro" action="#" method="get" novalidate class="card card-body shadow-sm">
+              <div class="row g-3">
+
+                <div class="col-12 col-md-6">
+                  <label for="nombre" class="form-label">Nombre completo *</label>
+                  <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ej. Maria Perez" autocomplete="name">
+                  <div class="invalid-feedback" id="error-nombre"></div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="correo" class="form-label">Correo electronico *</label>
+                  <input type="email" class="form-control" id="correo" name="correo" placeholder="nombre@correo.com" autocomplete="email">
+                  <div class="invalid-feedback" id="error-correo"></div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <label for="edad" class="form-label">Edad *</label>
+                  <input type="number" class="form-control" id="edad" name="edad" min="16" max="99">
+                  <div class="invalid-feedback" id="error-edad"></div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <label for="telefono" class="form-label">Telefono *</label>
+                  <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="9 digitos" inputmode="numeric" maxlength="9" autocomplete="tel">
+                  <div class="invalid-feedback" id="error-telefono"></div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <label for="ciudad" class="form-label">Ciudad *</label>
+                  <input type="text" class="form-control" id="ciudad" name="ciudad" list="listaCiudades" placeholder="Escribe o elige">
+                  <datalist id="listaCiudades">
+                    <option value="Puno"></option>
+                    <option value="Juliaca"></option>
+                    <option value="Arequipa"></option>
+                    <option value="Cusco"></option>
+                    <option value="Lima"></option>
+                  </datalist>
+                  <div class="invalid-feedback" id="error-ciudad"></div>
+                </div>
+
+                <div class="col-12">
+                  <label for="carrera" class="form-label">Carrera de interes *</label>
+                  <select class="form-select" id="carrera" name="carrera">
+                    <option value="">-- Selecciona una carrera --</option>
+                    <option>Desarrollo de Software</option>
+                    <option>Redes y Comunicaciones</option>
+                    <option>Diseño Grafico Digital</option>
+                    <option>Administracion de Empresas</option>
+                  </select>
+                  <div class="invalid-feedback" id="error-carrera"></div>
+                </div>
+
+                <fieldset class="col-12 col-md-6">
+                  <legend class="form-label fs-6">Modalidad *</legend>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="modalidad" id="modPresencial" value="Presencial">
+                    <label class="form-check-label" for="modPresencial">Presencial</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="modalidad" id="modVirtual" value="Virtual">
+                    <label class="form-check-label" for="modVirtual">Virtual</label>
+                  </div>
+                  <div class="text-danger small d-none" id="error-modalidad"></div>
+                </fieldset>
+
+                <fieldset class="col-12 col-md-6">
+                  <legend class="form-label fs-6">Turno preferido *</legend>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="turno" id="turnoM" value="Mañana">
+                    <label class="form-check-label" for="turnoM">Mañana</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="turno" id="turnoT" value="Tarde">
+                    <label class="form-check-label" for="turnoT">Tarde</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="turno" id="turnoN" value="Noche">
+                    <label class="form-check-label" for="turnoN">Noche</label>
+                  </div>
+                  <div class="text-danger small d-none" id="error-turno"></div>
+                </fieldset>
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="terminos" name="terminos">
+                    <label class="form-check-label" for="terminos">Acepto el tratamiento de mis datos personales *</label>
+                    <div class="invalid-feedback" id="error-terminos"></div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div id="resumenErrores" class="alert alerta-amarilla d-none" role="alert"></div>
+                </div>
+
+                <div class="col-12 d-flex flex-wrap gap-2">
+                  <button type="submit" class="btn-pildora border-0">Enviar registro</button>
+                  <button type="reset" class="btn-pildora-borde" id="btnLimpiar">Limpiar</button>
+                </div>
+              </div>
+            </form>
+
+            <div id="resultado" class="mt-4" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="pie">
+    <div class="container footer-flex">
+      <div>
+        <h3>Contacto</h3>
+        <p>Av. La Torre 123, Puno<br>Tel. 951 000 000<br>admision@tecnova.edu.pe</p>
+      </div>
+      <div>
+        <h3>Enlaces de interes</h3>
+        <ul>
+          <li><a href="index.html">Pagina principal</a></li>
+          <li><a href="tecnova.html">Inicio de TecNova</a></li>
+          <li><a href="https://github.com/carloschaguam-commits/CarlosChagua" target="_blank" rel="noopener noreferrer">Mi repositorio</a></li>
+          <li><a href="https://arnoldbgq.github.io/cursofrontend/" target="_blank" rel="noopener noreferrer">Pagina del instructor</a></li>
+          <li><a href="https://github.com/arnoldbgq/cursofrontend/tree/main" target="_blank" rel="noopener noreferrer">Repositorio del instructor</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copy">&copy; 2026 TecNova Instituto Tecnologico. Proyecto academico.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
